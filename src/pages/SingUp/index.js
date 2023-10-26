@@ -1,7 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 
-export default function App() {
+export default function SingUp(props) {
+
+    const { navigation } = props;
+
+    const goToLogIn = () => {
+        navigation.navigate("LogIn")
+    }
+
     <SafeAreaView style={styles.container}>
 
         <View style={styles.Content}>
@@ -74,7 +81,7 @@ export default function App() {
 
             <View style={[styles.spacing, styles.row]}>
                 <Text style={styles.lable}>already have an account?</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={goToLogIn}>
                     <Text style={styles.LogIn}>Log in</Text>
                 </TouchableOpacity>
             </View>
